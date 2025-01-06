@@ -20,7 +20,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 class VigenereCipheringMachine {
-
+  
   constructor(isDirect = true) {
     this.isDirect = isDirect;
   }
@@ -32,7 +32,7 @@ class VigenereCipheringMachine {
     return this._process(message, key, 'encrypt');
   }
 
-  decrypt(message, key) {
+  decrypt(encryptedMessage, key) {
     if (!encryptedMessage || !key) {
       throw new Error('Incorrect arguments!');
     }
