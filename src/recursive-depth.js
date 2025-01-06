@@ -24,8 +24,8 @@ class DepthCalculator {
     }
     return 1 + maxDepth;   
   }
-  }
-}
+ }
+
 
 module.exports = {
   DepthCalculator
