@@ -29,17 +29,17 @@ class VigenereCipheringMachine {
     if (!message || !key) {
       throw new Error('Incorrect arguments!');
     }
-    return this._enigma(message, key, 'encrypt');
+    return this._process(message, key, 'encrypt');
   }
 
   decrypt(message, key) {
     if (!encryptedMessage || !key) {
       throw new Error('Incorrect arguments!');
     }
-    return this._enigma(encryptedMessage, key, 'decrypt');
+    return this._process(encryptedMessage, key, 'decrypt');
   }
-  
-  _enigma(input, key, method) {
+
+  _process(input, key, method) {
     const A = 65;
     const Z = 90;
     const ALPHABET_SIZE = 26;
