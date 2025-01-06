@@ -31,12 +31,14 @@ class VigenereCipheringMachine {
     }
     return this._enigma(message, key, 'encrypt');
   }
+
   decrypt(message, key) {
     if (!encryptedMessage || !key) {
       throw new Error('Incorrect arguments!');
     }
     return this._enigma(encryptedMessage, key, 'decrypt');
   }
+  
   _enigma(input, key, method) {
     const A = 65;
     const Z = 90;
@@ -56,7 +58,7 @@ class VigenereCipheringMachine {
             ? ((charCode - A + shift) % ALPHABET_SIZE) + A
             : ((charCode - A - shift + ALPHABET_SIZE) % ALPHABET_SIZE) + A;
         result += String.fromCharCode(newCharCode);
-        keyIndex ++;
+        keyIndex++;
       } else {
         result += inputUpper[i];
       }
